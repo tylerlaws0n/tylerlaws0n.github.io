@@ -18,11 +18,11 @@ When selecting sports to show a user, we take the closest team for every sport t
 
 By default if you `curl sprt.dev` it will attempt to collect your current location based off of your IP address as seen here (assuming the current location is LA):
 
-![default curl sprt.dev result](/images/posts/sprt-2.png)
+![default curl sprt.dev result](/images/sprt-2.png)
 
 When you provide a city like this image, the app will perform a google maps search for the location specified like this:
 
-![curl sprt.dev/boston result](/images/posts/sprt-1.png)
+![curl sprt.dev/boston result](/images/sprt-1.png)
 
 Eventually, I would like to add to the functionality of the app. I'd be thrilled if others were to also start using the app and then make feature/functionality suggestions & requests [on Github](https://github.com/tylerjlawson/sprt.dev/issues).
 
