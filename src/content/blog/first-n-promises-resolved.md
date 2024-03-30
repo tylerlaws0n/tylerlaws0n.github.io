@@ -18,10 +18,7 @@ async function promiseSome(promises, n) {
   while (result.length < n) {
     // track index of each promise so we can rule them out as each race completes
     const [winningResult, winningIndex] = await Promise.race(
-      promisesCopy.map(async (p, i) => {
-        const pResult = await p;
-        return [pResult, i];
-      })
+      promisesCopy.map(async (p, i) => [await p, i])
     );
 
     promisesCopy.splice(winningIndex, 1);
