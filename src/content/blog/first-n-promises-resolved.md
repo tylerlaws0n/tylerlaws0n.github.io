@@ -64,7 +64,7 @@ Now that we have our list of possible pairings we can write a function that retu
 function promiseSome(promises, n) {
   const combinations = combinationsFromLength(promises.length, n);
   const allGroups = combinations.map((group) =>
-    Promise.all(group.map((ind) => promises[ind]))
+    Promise.all(group.map((ind) => promises[ind])),
   );
   return Promise.race(allGroups);
 }
@@ -77,7 +77,7 @@ const testPromise = (ms, message) =>
   new Promise((resolve) =>
     setTimeout(() => {
       resolve(`${message}: took ${ms} ms`);
-    }, ms)
+    }, ms),
   );
 
 const p1 = testPromise(3000, "Promise One");
