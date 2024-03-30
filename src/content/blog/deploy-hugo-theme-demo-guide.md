@@ -1,6 +1,6 @@
 ---
 title: "How To Auto Deploy a Hugo Theme Demo to Netlify"
-date: 2021-07-08T19:46:41-04:00
+date: July 7 2021
 description: "The easy way to bring continuous deployment to your hugo theme demo."
 ---
 
