@@ -1,17 +1,16 @@
 ---
 title: "A Story of Three Component Libraries"
-description: ""
-date: May 99 2024
-draft: true
+description: "What was once hard, is now less hard."
+date: Jun 22 2024
 ---
 
-Components are the blocks we build our UIs with. If made well, development is a breeze; just take what you need, wire it up with your state, & voilà! There is your fully formed UI (hopefully 😅).s
+Components are the blocks we build our UIs with. If made well, development is a breeze; just take what you need, wire it up with your state, and voilà! There is your fully formed UI (hopefully 😅).
 
-Today, I think there are primarily three distinct ways to deliver your company's design system & common tooling through a component library:
+Today, there are primarily three distinct ways to deliver your company's design system and common tooling through a component library:
 
-- Use something off-the-shelf (e.g., Material UI or Mantine UI)
-- Build your own from scratch
-- Use accessible and customizable components for composition
+- **Use something off-the-shelf** (e.g., Material UI or Mantine UI)
+- **Build your own from scratch**
+- **Use accessible and customizable components for composition**
 
 ## Off-the-Shelf Solutions
 
@@ -25,9 +24,9 @@ The appeal is straightforward: speed and simplicity. At the beginning of a proje
 
 However, issues can arise as your project matures and you move from a "just get it running" stage to one that involves more customization and design refinement. For example, MUI uses styled-components, which ties you to a particular styling methodology.
 
-### Runtime CSS-in-JS Concerns
+#### Runtime CSS-in-JS Concerns
 
-A quick note on runtime CSS-in-JS (like styled-components): while it provides a good developer experience (DX), it can burden the browser with unnecessary styling calculations. Styles associated with component props are available at build time, so requiring the client to finalize these styles in the browser is inefficient. Libraries like [Vanilla Extract](https://vanilla-extract.style/) & [StyleX](https://stylexjs.com/) address this by handling styles at build time.
+A quick note on runtime CSS-in-JS (like styled-components): while it provides a good developer experience (DX), it can burden the browser with unnecessary styling calculations. Styles associated with component props are available at build time, so requiring the client to finalize these styles in the browser is inefficient. Libraries like [Vanilla Extract](https://vanilla-extract.style/) and [StyleX](https://stylexjs.com/) address this by handling styles at build time.
 
 ```tsx
 <Button variant="contained">Contained</Button>
@@ -68,9 +67,11 @@ This approach not only burdens the client with styling calculations but also lac
 
 Using an off-the-shelf component library can be beneficial if you are certain that your customization needs will remain minimal. Libraries like MUI offer a well-constructed set of accessible components but come with performance and customization trade-offs.
 
-## Build Your Library From Scratch
+## Building Your Library From Scratch
 
 If you've been burned by trying to scale up a component library and cater to a design team that wants to use their own design system with a "batteries-included" component library, you may have been tempted to throw it all out and start over from scratch. Or maybe this was just me. Either way, this is deceptively difficult. All of the difficulty is in the details that you and I were not considering.
+
+### My Experience
 
 This is a project I took on with the following business needs in mind:
 
@@ -92,7 +93,7 @@ The term 'Headless' mystified me for years. I unfortunately took a long time to 
 
 **For Components:** We take the head off so that we can style to our design system and write our own API for how to develop with our components.
 
-**For CMS's:** Take the content out of the code for customizing content asynchronously from your development work.
+**For CMSs:** Take the content out of the code for customizing content asynchronously from your development work.
 
 ### Enter shadcn/ui
 
@@ -102,4 +103,4 @@ Components now can continue to be fully controlled and owned by you team in part
 
 ## In Summary
 
-Building components and tools to support your set of engineering teams is always going to be a bit of an undertaking. That being said, it has never been easier than it is today: components are broken up into the logical set of pieces that build modern web apps and customization is trivial.
+Building components and tools to support your set of engineering teams is always going to be a sizeable undertaking. That being said, it has never been easier than it is today: components are broken up into the logical set of pieces that build modern web apps and customization is trivial.
