@@ -1,10 +1,10 @@
 ---
 title: "First N Promises Resolved"
 description: "Examples for how to get the first n promises resolved from an array."
-date: March 29 2024
+date: March 29 2022
 ---
 
-With Javascript at the moment, it is really easy to get the first 1 or _l_ promises resolved in a list, where _l_ is the length of the list. This is achieved with `Promise.race` and `Promise.all` respectively. When creating production applications `Promise.allResolved` is normally preferred since it will resolve even if one of the promises errors, but for the purposes of this post I will assume that all promises resolve successfully.
+With Javascript at the moment, it is really easy to get the first N promises resolved in a list. This is achieved with `Promise.race` and `Promise.all` respectively. When creating production applications `Promise.allResolved` is preferred since it will resolve even if one of the promises error, but for the purposes of this post I will assume that all promises resolve successfully.
 
 Let's say you have a list of 3 promises and you want to obtain the first two that resolve. To do this, we can group all possible pairs of two promises, use `Promise.all` on the two, then combine them into a larger array, where we `race` for the first two to be resolved.
 
