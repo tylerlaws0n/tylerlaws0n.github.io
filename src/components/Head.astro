@@ -74,9 +74,9 @@ const { title, description, image = "/nano.png" } = Astro.props;
   document.addEventListener("astro:before-swap", (e) =>
     [
       ...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll(
-        "link[as=\"font\"]"
+        'link[as="font"]',
       ),
-    ].forEach((link) => link.remove())
+    ].forEach((link) => link.remove()),
   );
 </script>
 
@@ -162,8 +162,8 @@ const { title, description, image = "/nano.png" } = Astro.props;
              -ms-transition: none !important;
              transition: none !important;
           }
-        `
-      )
+        `,
+      ),
     );
 
     document.head.appendChild(css);
@@ -193,5 +193,7 @@ const { title, description, image = "/nano.png" } = Astro.props;
   preloadTheme();
 </script>
 
-<script data-goatcounter="https://tylerlaws0n.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<script
+  data-goatcounter="https://tylerlaws0n.goatcounter.com/count"
+  async
+  src="//gc.zgo.at/count.js"></script>

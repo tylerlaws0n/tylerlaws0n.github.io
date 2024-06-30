@@ -18,7 +18,7 @@ async function promiseSome(promises, n) {
   while (result.length < n) {
     // track index of each promise so we can rule them out as each race completes
     const [winningResult, winningIndex] = await Promise.race(
-      promisesCopy.map(async (p, i) => [await p, i])
+      promisesCopy.map(async (p, i) => [await p, i]),
     );
 
     promisesCopy.splice(winningIndex, 1);
@@ -36,7 +36,7 @@ const testPromise = (ms, message) =>
   new Promise((resolve) =>
     setTimeout(() => {
       resolve(`${message}: took ${ms} ms`);
-    }, ms)
+    }, ms),
   );
 
 const p1 = testPromise(3000, "Promise One");
